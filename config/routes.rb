@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get "about-us", to:"about#index", as: :about
   root to:"main#index"
   get "test-page", to:"test#tst", as: :test
+
+  # Sign up form
+  get "sign_up", to:"registrations#new"
+  post "users", to:"registrations#create"
 end
