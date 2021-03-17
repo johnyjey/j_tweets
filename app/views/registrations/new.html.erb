@@ -7,7 +7,14 @@
             <div class="card-body">
                 <h1>Sign Up</h1>
                 <hr/>
-                <%= form_with model: @user do |form| %>
+                <%= form_with model: @user do |form| %> 
+                    <% if @user.errors.any?%>                        
+                        <div class="mb-3 alert alert-danger"> 
+                            <% @user.errors.full_messages.each do |message| %>
+                                <div><%= message %></div>
+                            <% end %>
+                        </div>
+                    <% end %>
                     <div class="mb-3"> 
                         <%= form.label :Name %>
                         <%= form.text_field :name, class:"form-control", placeholder: "Please enter your full Name"  %>
