@@ -16,8 +16,8 @@ class RegistrationsController < ApplicationController
         @user = User.new(user_params)
         if @user.save
           session[:user_id] = @user.id
-          #redirect_to root_path, notice: "Successfully created account"
-          redirect_to sign_up_path, notice: "Congrats! You have created account successfully. Please keep in touch with us for updates"
+          redirect_to root_path, notice: "Successfully created account"
+          #redirect_to sign_up_path, notice: "Congrats! You have created account successfully. Please keep in touch with us for updates"
         else
           flash[:alert] ="Something was wrong"
           render :new

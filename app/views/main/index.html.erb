@@ -3,7 +3,17 @@
     
     <h1 class="text-info">Welcome to my first Ruby Project</h1>
 </div>
- <hr/>
+ <hr/> 
+<% if @user %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success alert-dismissable text-center">
+                Welcome <b><%= @user.name %></b>! ,You logged in as <i><%= @user.email %></i>
+            </div>
+        </div>
+    </div>
+    
+ <% end %>
 <div class="row">
     <div class="col-md-4">
         <%= render partial:"shared/profile" %>
