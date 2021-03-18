@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # Sign up form
   get "sign_up", to:"registrations#new"
   post "users", to:"registrations#create"
+  delete "logout", to:"sessions#destroy"
 end

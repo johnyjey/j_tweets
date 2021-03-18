@@ -6,13 +6,13 @@
  <hr/> 
 <% if @user %>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12"> 
             <div class="alert alert-success alert-dismissable text-center">
-                Welcome <b><%= @user.name %></b>! ,You logged in as <i><%= @user.email %></i>
+                Welcome <b><%= @user.name %></b>! ,You logged in as <i><%= @user.email %></i> 
+                <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-warning" %>
             </div>
         </div>
-    </div>
-    
+    </div> 
  <% end %>
 <div class="row">
     <div class="col-md-4">
