@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Sign In</h1>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-12">
+        <%= form_with url: sign_in_path do |form|%>
+            <div class="col-md-4">
+                <%= form.label :Email %>
+                <%= form.text_field :email, class:"form-control", placeholder: "Please Enter your valid email" %>
+            </div>
+            <div class="col-md-4">
+                <%= form.label :Password %>
+                <%= form.password_field :password, class:"form-control", placeholder: "Enter Password" %>
+            </div>
+            <br/>
+            <div class="col-md-4"> 
+                <center><%= form.submit "Sign In", class:"btn btn-primary" %></center>
+            </div>
+        <% end %>
+    </div>
+</div>
