@@ -19,8 +19,28 @@
             <%= link_to "Test", test_path, class: "nav-link" %>
         </li>
     </ul>
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <% if Current.user %>       
+        <span class="navbar-text text-warning">
+        Welcome <b class="text-info"> <%= Current.user.name %></b>, 
+          You logged in as <i>
+          <%= Current.user.email %></i>
+        </span>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-outline-danger bg-info" %>
+        </li>  
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", sign_in_path, class: "nav-link" %>
+        </li> 
+        <li class="nav-item">
+          <%= link_to "Sign up", sign_up_path, class: "nav-link" %>   
+        </li> 
+      <% end %>
+    </ul>
   </div> 
-  <div class="pull-right">
-     <%= link_to "Sign up", sign_up_path, class: "nav-link btn btn-light" %>
-  </div>
+  <%# <div class="pull-right">
+    
+
+  </div> %>
 </nav>
