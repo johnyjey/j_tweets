@@ -1,0 +1,9 @@
+ Hi <%= params[:user].name%>,
+<p>
+ We have received a request to change your password.
+ </p>
+ <p>
+ If this was you, Please click below to change the password.
+  <%= link_to "Reset Password", password_reset_edit_url(token: @token) %>.
+This link will expire automatically in 15 minutes 
+</p>

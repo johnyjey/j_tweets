@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h1>Sign Up</h1>
                 <hr/>
-                <%= form_with model: Current.user, url: sign_up_path do |form| %> 
+                <%= form_with model: @user, url: sign_up_path do |form| %> 
                     <% if form.object.errors.any?%>                        
                         <div class="mb-3 alert alert-danger"> 
                             <% form.object.errors.full_messages.each do |message| %>

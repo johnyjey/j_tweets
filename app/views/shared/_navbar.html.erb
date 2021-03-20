@@ -21,16 +21,17 @@
     </ul>
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <% if Current.user %>       
-        <span class="navbar-text text-warning">
-        Welcome <b class="text-info"> <%= Current.user.name %></b>, 
+        <span class="navbar-text text-default">
+          Welcome <b class="text-info"> <%= Current.user.name %></b>, 
           You logged in as <i>
           <%= Current.user.email %></i>
         </span>
+        
         <li class="nav-item">
-          <%= button_to "Edit Password", edit_password_path,  class:"btn btn-info " %>
+          <%= link_to "Edit Password", edit_password_path, class: "nav-link text-info" %>
         </li>  
         <li class="nav-item">
-          <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-danger" %>
+          <%= link_to "Logout", logout_path, method: :delete, class:"nav-link" %>
         </li>  
       <% else %>
         <li class="nav-item">
