@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  # OmniAuth 
+  get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
   # Logout
   delete "logout", to:"sessions#destroy"
 end

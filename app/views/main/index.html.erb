@@ -16,6 +16,9 @@
     </div> 
  <% end %>
  -->
+ <div class="row">
+    <%= button_to "Connect To", "/auth/twitter", method: :post, class: "btn btn-primary" %>
+ </div>
 <div class="row">
     <div class="col-md-4">
         <%= render partial:"shared/profile" %>
