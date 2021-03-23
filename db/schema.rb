@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_163606) do
+ActiveRecord::Schema.define(version: 2021_03_23_014051) do
+
+  create_table "t_witter_accounts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "username"
+    t.string "image"
+    t.string "token"
+    t.string "secret"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_t_witter_accounts_on_user_id"
+  end
+
+  create_table "twitter_accounts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "username"
+    t.string "image"
+    t.string "token"
+    t.string "secret"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_twitter_accounts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
@@ -20,4 +44,6 @@ ActiveRecord::Schema.define(version: 2021_03_13_163606) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "t_witter_accounts", "users"
+  add_foreign_key "twitter_accounts", "users"
 end
