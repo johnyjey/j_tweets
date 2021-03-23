@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     end 
 
     def require_user_logged_in!
-        redirect_to sign_in_path, alert: "Please Sign in to change password!" if Current.user.nil?
+        redirect_to sign_in_path, alert: "Please Sign in to proceed further!" if Current.user.nil?
     end
 
 end
