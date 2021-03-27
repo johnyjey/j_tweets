@@ -2,8 +2,7 @@
     <div class="card card-info">
         
         <%# Assign Current.User to variable  %>
-        <% if Current.user%>
-        
+        <% if Current.user%>        
             <% @user=Current.user %>
             <div class="card-header">
                 Profile from shared folder
@@ -12,7 +11,7 @@
                 <table class="table table-borderedr">
                     <tr>
                         <td> 
-                            <img src="../../assets/images/profile.jpg" class="img img-responsive rounded center" width="125px" height="150px"/>
+                            <img src="../../assets/images/profile.jpg" class="img img-responsive rounded center" width="100px" height="125px"/>
                         </td>
                     
                         <td  style="width:100%;height:100%;">
@@ -42,9 +41,10 @@
                 </table>
             </div>
         <% else %>
-            <div class="card-header">
+            
+            <div class="card-header bg-danger text-warning">
                 Please Login
             </div>
-            <center><h1>Please login <br/>to watch updates</h1></center>
+            <center><h1 class="text-info">Please login <br/>to watch updates</h1></center>
         <% end %>
     </div> 
